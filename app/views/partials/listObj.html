@@ -1,0 +1,10 @@
+<div ng-controller="listObjects">
+<input type="text" ng-model="search" placeholder="search book" />
+<li ng-repeat="book in books | fuzzy: search">
+    {{ book.title }}
+</li>
+<!--case sensitive-->
+<li ng-repeat="book in books | fuzzy: search: true">
+    {{ book.title }}
+</li>
+</div>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="SPAApp">
+<head>
+    <title>SPA App</title>
+
+    <link rel="stylesheet" href="/css/angular-material.css">
+    <link rel="stylesheet" href="/css/myStyle.css">
+    <script src="/js/lib/angular.min.js"></script>
+    <script src="/js/lib/angular-ui-router.min.js"></script>
+    <script src="/js/lib/angular-animate.min.js"></script>
+    <script src="/js/lib/angular-aria.min.js"></script>
+    <script src="/js/lib/angular-material.min.js"></script>
+    <script src="/js/lib/angular-messages.min.js"></script>
+    <script src="/js/lib/angular-filter.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div ng-controller="NavBar" ng-cloak>
+    <md-content class="md-padding">
+        <md-nav-bar nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="listObj" name="listObj">Список объектов</md-nav-item>
+            <md-nav-item md-nav-sref="newObj" name="newObj">Новый объект</md-nav-item>
+            <md-nav-item md-nav-sref="infoObj" name="infoObj">Подробная информация??</md-nav-item>
+        </md-nav-bar>
+    </md-content>
+</div>
+<div ui-view></div>
+
+
+</body>
+</html>
