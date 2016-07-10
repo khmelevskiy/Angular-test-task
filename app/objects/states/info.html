@@ -1,0 +1,12 @@
+<div flex="50" layout="column">
+    <h2 class="md-title">Заголовок</h2>
+    <p ng-bind="instance.title"></p>
+    <h2 class="md-title">Описание</h2>
+    <p ng-bind="instance.description || '-'"></p>
+    <h2 class="md-title">Адрес</h2>
+    <p ng-bind="instance.address || '-'"></p>
+    <h2 class="md-title">Категория</h2>
+    <p ng-bind="instance.category || '-'"></p>
+    <h2 class="md-title">Теги</h2>
+    <p class="md-disabled" ng-bind="instance.tags.join(', ') || '-'"></p>
+</div>

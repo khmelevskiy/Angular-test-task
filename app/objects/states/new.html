@@ -1,0 +1,49 @@
+<form name="form" novalidate layout="column" flex="50" layout-align="center" ng-submit="vm.addObject()">
+    <md-input-container>
+        <label>Заголовок</label>
+        <input ng-model="instance.title" name="title" required />
+        <div ng-messages="form.title.$error">
+            <div ng-message="required">Поле обязательно для заполнения</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+        <label>Описание</label>
+        <textarea ng-model="instance.description" name="description" md-maxlength="1024" rows="5" md-select-on-focus required>
+        </textarea>
+        <div ng-messages="form.description.$error">
+            <div ng-message="required">Поле обязательно для заполнения</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Адрес</label>
+        <input ng-model="instance.address" name="address" required />
+        <div ng-messages="form.address.$error">
+            <div ng-message="required">Поле обязательно для заполнения</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Категория</label>
+        <md-select ng-model="instance.category" name="category" required ng-init="form.$touch()">
+            <md-option ng-repeat="category in vm.categories" value="{{category}}" ng-bind="category">
+            </md-option>
+        </md-select>
+        <div ng-messages="form.category.$error">
+            <div ng-message="required">Поле обязательно для заполнения</div>
+        </div>
+    </md-input-container>
+
+    <md-chips
+            ng-model="instance.tags"
+            md-transform-chip="vm.validateChip($chip)"
+            placeholder="Теги"
+            delete-button-label="Удалить тег"
+            delete-hint="Нажмите, чтобы удалить"
+            secondary-placeholder="а ещё?"></md-chips>
+
+    <div layout-align="end" layout="row">
+        <md-button class="md-primary" type="submit" ng-disabled="!form.$valid">Добавить</md-button>
+    </div>
+</form>

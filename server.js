@@ -1,13 +1,11 @@
 "use strict";
+
 const express = require('express');
+const path = require('path');
 const app = express();
 
-//app.use(require('express').static(__dirname + '/app'));
-app.use(express.static(__dirname + '/app'));
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+const staticDir = path.join(__dirname, 'app');
+app.use('/', express.static(staticDir));
 
 app.listen(3000, () => {
   console.log('app listening on port 3000!');

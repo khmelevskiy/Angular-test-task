@@ -1,0 +1,7 @@
+md-nav-ink-bar {
+    display: none;
+}
+
+.md-button.md-accent:not([disabled]) md-icon {
+    color: inherit;
+}
