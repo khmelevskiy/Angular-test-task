@@ -6,7 +6,6 @@
                 <input ng-model="filter" />
             </md-input-container>
         </md-list-item>
-        <!--ng-repeat="item in collection | fuzzy:filter track by item.id "-->
         <md-list-item class="md-2-line" dir-paginate="item in collection | filter: filter | itemsPerPage: 6 track by item.id"
                       ng-attr-aria-label="item.title" ui-sref="objects.info({id: item.id})">
             <div class="md-list-item-text">{{item.title}}</div>

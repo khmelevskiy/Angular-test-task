@@ -5,7 +5,6 @@ angular.module('app', [
   'ngAnimate',
   'ngMaterial',
   'ngMessages',
-  'angular.filter',
   'app.shared',
   'app.objects'
 ])
