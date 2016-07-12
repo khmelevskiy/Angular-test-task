@@ -6,8 +6,16 @@
                 <input ng-model="filter" />
             </md-input-container>
         </md-list-item>
-        <md-list-item class="md-2-line" ng-repeat="item in collection | fuzzy:filter track by item.id" ng-attr-aria-label="item.title" ui-sref="objects.info({id: $index})">
+        <!--ng-repeat="item in collection | fuzzy:filter track by item.id "-->
+        <md-list-item class="md-2-line" dir-paginate="item in collection | filter: filter | itemsPerPage: 6 track by item.id"
+                      ng-attr-aria-label="item.title" ui-sref="objects.info({id: item.id})">
             <div class="md-list-item-text">{{item.title}}</div>
         </md-list-item>
     </md-list>
+
+    <div>
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="objects/states/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
 </div>
