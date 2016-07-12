@@ -16,11 +16,16 @@ function addRoute($stateProvider) {
 
 function ObjectsNewController($scope, $state, ObjectsService) {
   $scope.instance = {
-    title: 'Человеческое, слишком человеческое',
-    description: 'Автор: Фридрих Ницше',
-    address: 'Вселенная',
-    // category: 'Реализм',
-    tags: ['психология', 'сверхчеловек']
+    //title: 'Человеческое, слишком человеческое',
+    //description: 'Автор: Фридрих Ницше',
+    //address: 'Вселенная',
+    //category: 'Реализм',
+    //tags: ['психология', 'сверхчеловек']
+    title:'',
+    description: '',
+    address: '',
+    //category: 'Реализм',
+    tags: []
   };
 
   this.categories = [

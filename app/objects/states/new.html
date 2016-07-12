@@ -26,7 +26,8 @@
 
     <md-input-container>
         <label>Категория</label>
-        <md-select ng-model="instance.category" name="category" required ng-init="form.$touch()">
+        <!--<md-select ng-model="instance.category" name="category" required ng-init="form.$touch()">-->
+            <md-select ng-model="instance.category" name="category" required ">
             <md-option ng-repeat="category in vm.categories" value="{{category}}" ng-bind="category">
             </md-option>
         </md-select>
